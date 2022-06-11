@@ -75,6 +75,32 @@ const Acties = {
         'li_Sign off': 'xpath=id("mnusignout")',
     },    
     Companies: {
+        Companies: {
+            'a_peopleTeams': 'xpath=id("mnuactors")',
+            'a_settingsOrganisatie instelli': 'xpath=id("mnusettings")',
+            'a_star tmp_fs': 'xpath=//div[@id="55ca13be-83bc-0002-8bd1-454f215dd1a3"]/div/a[4]',
+            'a_starVerbeteren': 'xpath=id("homefeedback")',
+            'button_company_chose': 'xpath=//li[(text() = "${companyname}" or . = "${companyname}")]',
+            'button_company_delete': 'xpath=id("btndeletecompany")',
+            'button_company_switch': 'xpath=id("btncompany2")',
+            'button_Join company': 'xpath=id("btnjoin")',
+            'button_opslaan': 'xpath=id("btnsave")',
+            'button_opslaan_1': 'xpath=id("btnpartnersave")',
+            'button_verzenden': 'xpath=id("btnsave")',
+            'div_Co-teams (0)edit': 'xpath=//*[@id = "btnmembersedit"]',
+            'div_opslaan': 'xpath=//div[@id="00000000-0000-0000-0000-000000000000"]/div[8]',
+            'div_Organisaties': 'xpath=//div[@id="homecompanies"]/div',
+            'input_Company name_txtname': 'xpath=id("txtname")',
+            'input_search_search': 'xpath=id("search")',
+            'i_add': 'xpath=//button[@id="btnaddcompany"]/i',
+            'i_edit': 'xpath=id("btnpartnersedit")',
+            'i_search': 'xpath=id("btnsearch")',
+            'span_ClickFirstCompany': 'xpath=//*[contains(@class, "company") and contains(@class, "testfirst")]',
+            'span_Team1': 'xpath=//span[(contains(text(), "Team1") or contains(., "Team1"))]',
+            'span_Team1_mdl-checkbox__rippl': 'xpath=//ul[@id="partners"]/li/span[2]/label/span[3]',
+            'textarea_Info_txtinfo': 'xpath=id("txtinfo")',
+            'textarea_Message_comment': 'xpath=id("comment")',
+        },
         CompanySettings: {
             'a_settingsCompany settings': 'xpath=id("mnusettings")',
             'button_Save': 'xpath=id("btnsave")',
@@ -148,6 +174,25 @@ const Acties = {
 
 }
 
+const Activities = {
+    "Clean And Check": {
+        'ActivityCheck_Goed': 'xpath=id("btnok41ca13be-99bc-0004-8bd1-454f215dd1a3")/span[text()=\'Goed\']',
+        'ActivityCleanMachine_Klaar': 'xpath=id("btnok41ca13be-99bc-0001-8bd1-454f215dd1a3")/span[text()=\'Klaar\']',
+        'ActivityDeepCleanMachine_Skip': 'xpath=id("btnskip41ca13be-99bc-0003-8bd1-454f215dd1a3")/span[text()=\'Skip\']',
+        'button_Opslaan': 'xpath=id("btnsave")',
+        'select_-- Selecteer een dienst --          _4baf65': 'xpath=id("selectShift")',
+        'select_-- Selecteer team --Agullas Mengen M_0bb3a5': 'xpath=id("selectreportingactor")',
+    },
+    'a_codeActivities': 'xpath=id("mnuactivities")',
+    'button_add': 'xpath=id("btnadditem")',
+    'button_Save': 'xpath=id("btnsave")',
+    'first_activity': 'xpath=//*[@class = "mdl-list__item mdl-list__item--three-line item testfirst"]',
+    'input_Code_txtcode': 'xpath=id("txtcode")',
+    'input_Name_txtname': 'xpath=id("txtname")',
+    'textarea_Info_txtinfo': 'xpath=id("txtinfo")',
+    'textarea_Wiki_txtwiki': 'xpath=id("txtwiki")'
+}
+
 const Actors = {
     'a_peopleActors': 'xpath=id("mnuactors")',
     'button_Save': 'xpath=id("btnsave")',
@@ -197,6 +242,18 @@ const Basics = {
     'span_mdl-checkbox__ripple-cont': 'xpath=id("cookie")/label[@class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded"]/span[@class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center"]',
     'span_mdl-checkbox__ripple-cont_1': 'xpath=id("trace")/label[@class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded"]/span[@class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center"]'
 }
+
+const Boards = {
+    'actorAgullasMengenOchtend': 'xpath=id("41ca13be-83bc-0031-8bd1-454f215dd1a3")/div[@class="mdl-card__actions mdl-card--border"]/a[@class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"]/span[@class="mdl-button__ripple-container"]',
+    'a_Creativity is key_smiley veryhappy_gray': 'xpath=id("55ca13be-83bc-0031-8bd1-454f215dd1a3")/div[@class="smileys"]/a[@class="smiley veryhappy_gray"]',
+    'a_The work they deliver is from a high qual_16ca11': 'xpath=id("55ca13be-83bc-0001-8bd1-454f215dd1a3")/div[@class="djurfs"]/a[@class="djurf"]',
+    'button_Complimeter': 'xpath=id("btncomplimeter")',
+    'button_Happymeter': 'xpath=id("btnhappymeter")',
+    'button_Save': 'xpath=id("btnsave")',
+    'img_Planning_signal': 'xpath=id("signal55ca13be-83bc-0031-8bd1-454f216ee1a3")',
+    'span_Angels (ANG)': 'xpath=id("41ca13be-83bc-0018-8bd1-454f215dd1a3")/div[@class="mdl-list__item-primary-content"]/div[@class="mdl-list__item-text-header"]/span[1]',
+}
+
 
 const Checklist = {
     'a_Controlelijsten': 'xpath=id("homechecklists")',
@@ -250,6 +307,21 @@ const Groups = {
     'textarea_txtinfo': 'xpath=id("txtinfo")'
 }
 
+const Happymeter = {
+    'a_Creativity is key_smiley veryhappy_gray': 'xpath=//*[@class = "smiley veryhappy_gray"]',
+    'button_Complimeter': 'xpath=id("btnfeedback")',
+    'button_Datum': 'xpath=//*[@id = "btnDatepickerDate"]',
+    'button_Nog een': 'xpath=id("btngotolist")',
+    'button_ok': 'xpath=id("mddtp-date__ok")',
+    'button_Verzenden': 'xpath=id("btnsave")',
+    'h2_Complimeter': 'xpath=id("main")/div[@class="maxime-card-wide maxime-mdl-card"]/div[@class="mdl-card__title feedback"]/h2[@class="mdl-card__title-text"]',
+    'h2_Dank je': 'xpath=id("result")/div[@class="mdl-card__title happymeter"]/h2[@class="mdl-card__title-text"]',
+    'input_Order nummer_ordernumber': 'xpath=id("ordernumber")',
+    'select_Shift': 'xpath=id("selectShift")',
+    'span_Agullas Mengen Ochtend (AGU)': 'xpath=id("41ca13be-83bc-0031-8bd1-454f215dd1a3")/div[@class="mdl-list__item-primary-content"]/div[@class="mdl-list__item-text-header"]/span[1]',
+}
+
+
 const Menu = {
     'menuActors': 'xpath=id("mnuactors")',
     'menuGroups': 'xpath=id("mnugroups")',
@@ -269,15 +341,35 @@ const Shortcuts = {
     'ShortcutSettings': 'xpath=id("mnumysettings")'
 }
 
+const Signals = {
+    'a_group_workGroups': 'xpath=//*[@id = "mnugroups"]',
+    'button_Send': 'xpath=//*[@id = "btnsignalsave"]',
+    'i_add': 'xpath=id("btnaddsignal")/i[@class="material-icons"]',
+    'i_keyboard_arrow_down': 'xpath=id("popup_content")/div[@class="mdl-card__supporting-text"]/div[2]/div[@class="mdl-card__supporting-text"]/div[@class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height getmdl-select__fullwidth is-upgraded"]/label[1]/i[@class="mdl-icon-toggle__label material-icons"]',
+    'i_search': 'xpath=//*[@id = "btnsearch"]',
+    'input_Name_name': 'xpath=//*[@id = "name"]',
+    'input_search_search': 'xpath=//*[@id = "search"]',
+    'input_Sequence_sequence': 'xpath=//*[@id = "sequence"]',
+    'li_Delete': 'xpath=//*[@id = "mnudeletea261f0a6-44d9-4f97-bcd8-397ca60614de"]',
+    'li_Other': 'xpath=id("selectSignalTypeOptions")/li[@class="mdl-menu__item"]',
+    'span_Enabled_mdl-switch__ripple-container mdl-js-ripple-effect mdl-ripple--center': 'xpath=id("enabled")/span[@class="mdl-switch__ripple-container mdl-js-ripple-effect mdl-ripple--center"]',
+    'span_Max -': 'xpath=id("41ca13be-67bc-0010-8bd1-454f215dd1a9")/div[@class="mdl-list__item-primary-content"]/div[@class="mdl-list__item-text-header"]/span[1]',
+    'span_more_vert_mdl-button__ripple-container': 'xpath=id("mnusignala261f0a6-44d9-4f97-bcd8-397ca60614de")/span[@class="mdl-button__ripple-container"]',
+}
+
 module.exports = {
     Global, 
     Defaults, 
     Acties,
+    Activities,
     Actors,
     Basics,
+    Boards,
     Checklist,
     Dashboard,
     Groups,
+    Happymeter,
     Menu,
     Shortcuts,
+    Signals,
 }

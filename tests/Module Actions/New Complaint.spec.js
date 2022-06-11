@@ -3,7 +3,6 @@ const { Login } = require('../../login');
 const { Global, Basics, Acties, Dashboard } = require('../../objects')
 
 test('New Complaint', async ({ page, browser }) => {
-//   page.on('dialog', dialog => dialog.accept());
   const context = await browser.newContext()
   await page.goto(Global.url)
 

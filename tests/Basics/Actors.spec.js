@@ -5,7 +5,6 @@ const { Global, Defaults, Actors } = require('../../objects')
 test('Actors', async ({ page, browser }) => {
   const context = await browser.newContext()
 
-  let chars = "ABCDEFGHIJKLMNOPQRSTUVWYZ0123456789"
   let actorcode = (Math.random() + 1).toString(36).substring(2,5);
 
   await page.goto(Global.url);

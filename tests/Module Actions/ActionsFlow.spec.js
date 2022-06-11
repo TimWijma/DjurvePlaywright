@@ -3,7 +3,6 @@ const { Login } = require('../../login');
 const { Global, Menu, Basics, Acties } = require('../../objects')
 
 test('ActionsFlow', async ({ page, browser }) => {
-//   page.on('dialog', dialog => dialog.accept());
   const context = await browser.newContext()
   await page.goto(Global.url)
 
@@ -41,20 +40,16 @@ test('ActionsFlow', async ({ page, browser }) => {
   await page.fill(Basics['Message-Description'], "Vreemd")
   await page.click(Acties.ActionFlow.button_Send)
   await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
-  // await page.locator("#task").waitFor({state: 'hidden'})
   await page.click(Acties.ActionFlow.button_Accept)
   await page.click(Acties.ActionFlow.div_Message)
   await page.fill(Basics['Message-Description'], "Geen idee wat het is, maar ik pak het op.")
   await page.click(Acties.ActionFlow.button_Send)
   await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
-  // await page.locator("#task").waitFor({state: 'hidden'})
   await expect(page.locator(Acties.ActionFlow.td_Status)).toHaveText("Accepted")
   await page.click(Acties.ActionFlow['button_Not solved'])
   await page.fill(Basics['Message-Description'], "Sorry, ik kon het niet oplossen. Technische dienst moet er naar kijken.")
   await page.click(Acties.ActionFlow.button_Send)
   await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
-
-  // await page.locator("#task").waitFor({state: 'hidden'})
 
   await page.click(Basics.account)
   await page.click(Basics.signoff)
@@ -69,7 +64,6 @@ test('ActionsFlow', async ({ page, browser }) => {
   await page.selectOption(Acties.selectActionActor, "41ca13be-83bc-0799-8bd1-454f215dd1a3")
   await page.selectOption(Acties.selectActionUser, "51da13be-83bc-494a-8bd1-454f215dd1a9")
   await page.click(Acties.buttonStartActionFromTask)
-  // await page.locator("#task").waitFor({state: 'hidden'})
   await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
   
   await page.click(Basics.account)
@@ -84,11 +78,9 @@ test('ActionsFlow', async ({ page, browser }) => {
   await page.fill(Basics['Message-Description'], "Ga ik fixen. Ik weet wat het is.")
   await page.click(Acties.ActionFlow.button_Send)
   await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
-  // await page.locator("#task").waitFor({state: 'hidden'})
   await page.click(Acties.ActionFlow.button_Solved)
   await page.fill(Basics['Message-Description'], "Is opgelost.")
   await page.click(Acties.ActionFlow.button_Send)
-  // await page.locator("#task").waitFor({state: 'hidden'})
   await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
 
   await page.click(Basics.account)
@@ -102,12 +94,10 @@ test('ActionsFlow', async ({ page, browser }) => {
   await page.click(Acties.ActionFlow.button_Afsluiten)
   await page.fill(Basics['Message-Description'], "Probleem is uit de wereld!")
   await page.click(Acties.ActionFlow.button_Send)
-  // await page.locator("#task").waitFor({state: 'hidden'})
   await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
   await page.click(Acties.ActionFlow.a_listRegistraties)
   await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
   await page.waitForTimeout(1000);
-  // await page.click(Acties.showClosed)
   await page.click('#extrafilterclosed')
   await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
   await page.click(Acties.Acties.li_first_action)

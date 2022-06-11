@@ -3,7 +3,6 @@ const { Login } = require('../../login');
 const { Global, Basics, Acties, Menu } = require('../../objects')
 
 test('Fields', async ({ page, browser }) => {
-//   page.on('dialog', dialog => dialog.accept());
   const context = await browser.newContext()
   await page.goto(Global.url)
 
@@ -25,9 +24,6 @@ test('Fields', async ({ page, browser }) => {
   await page.fill(Acties.FieldTest['textarea_Kun je daar meer over vertellen_te_f9f6f4'], "Uitgebreide toelichting voor test")
   await page.fill(Acties.FieldTest.input_NumberAmount, "1.5678")
   await page.fill(Acties.FieldTest['input_Wat was exact de laatste keer_date'], "31-12-2021")
-  // await page.click('#datebutton55ca13be-83bc-0085-8bd1-454f215dd1a3')
-  // await page.click('.mddtp-picker__cell--today')
-  // await page.click('#mddtp-date__ok')
   await page.fill(Acties.FieldTest['input_Wat was exact de laatste keer_time'], "23:59")
   await page.click(Acties.FieldTest.button_Opslaan)
   await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
