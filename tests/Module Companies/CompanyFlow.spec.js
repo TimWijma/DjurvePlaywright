@@ -57,6 +57,7 @@ test('CompanyFlow', async ({ page, browser }) => {
   await pageTwo.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
 
   await pageTwo.click(Acties.Companies.Companies.a_peopleTeams)
+  await pageTwo.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
   await pageTwo.click("#btnaddactor")
   await pageTwo.fill(Actors.input_txtname, "Team2")
   await pageTwo.fill(Actors.input_txtcode, (Math.random() + 1).toString(36).substring(2,5))

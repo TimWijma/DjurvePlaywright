@@ -45,6 +45,7 @@ test('ActionsFlow', async ({ page, browser }) => {
   await page.fill(Basics['Message-Description'], "Geen idee wat het is, maar ik pak het op.")
   await page.click(Acties.ActionFlow.button_Send)
   await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
+  await expect(page.locator('//*[@class="action-table-firstcolumn"]/parent::*//*[@id="status"]')).toBeVisible()
   await expect(page.locator(Acties.ActionFlow.td_Status)).toHaveText("Accepted")
   await page.click(Acties.ActionFlow['button_Not solved'])
   await page.fill(Basics['Message-Description'], "Sorry, ik kon het niet oplossen. Technische dienst moet er naar kijken.")

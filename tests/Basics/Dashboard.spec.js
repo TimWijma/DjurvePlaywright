@@ -60,5 +60,3 @@ test('Dashboard', async ({ page, browser }) => {
   await page.click(Dashboard.buttonBack)
   await context.close()
 });
-
-const delay = ms => new Promise(resolve => setTimeout(resolve, ms))

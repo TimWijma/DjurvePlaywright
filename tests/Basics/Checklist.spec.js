@@ -1,6 +1,6 @@
 const { test } = require('@playwright/test');
 const { Login } = require('../../login');
-const { Global, Defaults, Checklist } = require('../../objects')
+const { Global, Defaults, Checklist, Basics } = require('../../objects')
 
 test('Checklist', async ({ page, browser }) => {
   const context = await browser.newContext()
@@ -21,6 +21,7 @@ test('Checklist', async ({ page, browser }) => {
   await page.click(Checklist.input_search_search)
   await page.fill(Checklist.input_search_search, "Standard Djurve HappyMeter")
   await page.keyboard.down('Enter');
+  await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
   await page.click(Checklist.li_first_checklist)
   await page.click(Checklist['span_arrow_back_mdl-button__ripple-container'])
 
@@ -32,6 +33,7 @@ test('Checklist', async ({ page, browser }) => {
   await page.selectOption(Checklist.select_ComplimeterHappyMeter_0e130a, "2")
   await page.fill(Checklist.textarea_Info_txtinfo, "new info")
   await page.click(Checklist.button_Opslaan)
+  await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
   await page.click(Defaults.div_Toastr)
   await page.click(Checklist['span_delete_mdl-button__ripple-container'])
 

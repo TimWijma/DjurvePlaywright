@@ -292,6 +292,16 @@ const Dashboard = {
     'homeTask': 'xpath=id("checklist430a4955-0050-42f0-8076-997b1a6204c6")',
 }
 
+const Feedback = {
+    'button_Verzenden': 'xpath=id("btnsave")',
+    'div_Complimeter': 'xpath=id("homefeedback")/div[@class="mdl-card__title"]',
+    'h2_Complimeter': 'xpath=id("main")/div[@class="maxime-card-wide maxime-mdl-card"]/div[@class="mdl-card__title feedback"]/h2[@class="mdl-card__title-text"]',
+    'ratingoption1': 'xpath=//div[@id="55ca13be-83bc-0001-8bd1-454f215dd1a3"]/div/a[2]',
+    'ratingoption2': 'xpath=//div[@id="55ca13be-83bc-0002-8bd1-454f215dd1a3"]/div/a[2]',
+    'ratingoption3': 'xpath=//div[@id="55ca13be-83bc-0003-8bd1-454f215dd1a3"]/div/a[5]',
+    'span_Angels (ANG)': 'xpath=id("41ca13be-83bc-0018-8bd1-454f215dd1a3")/div[@class="mdl-list__item-primary-content"]/div[@class="mdl-list__item-text-header"]/span[1]',
+}
+
 const Groups = {
     'a_group_workGroups': 'xpath=id("mnugroups")',
     'button_add': 'xpath=id("btnaddgroup")',
@@ -308,6 +318,17 @@ const Groups = {
 }
 
 const Happymeter = {
+    Happymeter: {
+        'button_Go to list': 'xpath=//button[@id = "btngotolist"]',
+        'button_Send': 'xpath=id("btnsave")',
+        'div_How do you feel': 'xpath=//div[@id="homehappymeter"]',
+        'span_mdl-button__ripple-contai': 'xpath=id("btnclose")/span[@class="mdl-button__ripple-container"]',
+        'span_Tweetie Birds': 'xpath=//span[(contains(text(), "Tweetie Birds") or contains(., "Tweetie Birds"))]',
+        'star_neutral': 'xpath=//div[@id="55ca13be-83bc-0006-8bd1-454f215dd1a3"]/div/a[2]',
+        'star_satisfied': 'xpath=//div[@id="55ca13be-83bc-0005-8bd1-454f215dd1a3"]/div/a[3]',
+        'star_very_satisfied': 'xpath=//div[@id="55ca13be-83bc-0004-8bd1-454f215dd1a3"]/div/a[4]',
+    },
+    'h2_Happymeter': 'xpath=id("main")/div[@class="maxime-card-wide maxime-mdl-card"]/div[@class="mdl-card__title happymeter"]/h2[@class="mdl-card__title-text"]',
     'a_Creativity is key_smiley veryhappy_gray': 'xpath=//*[@class = "smiley veryhappy_gray"]',
     'button_Complimeter': 'xpath=id("btnfeedback")',
     'button_Datum': 'xpath=//*[@id = "btnDatepickerDate"]',
@@ -321,6 +342,16 @@ const Happymeter = {
     'span_Agullas Mengen Ochtend (AGU)': 'xpath=id("41ca13be-83bc-0031-8bd1-454f215dd1a3")/div[@class="mdl-list__item-primary-content"]/div[@class="mdl-list__item-text-header"]/span[1]',
 }
 
+const Machines = {
+    'a_codeMachines': 'xpath=//*[@id = "mnumachines"]',
+    'button_add': 'xpath=id("btnadditem")',
+    'button_Save': 'xpath=id("btnsave")',
+    'first_machine': 'xpath=//*[@class = "mdl-list__item mdl-list__item--three-line item testfirst"]',
+    'input_Code_txtcode': 'xpath=id("txtcode")',
+    'input_Name_txtname': 'xpath=id("txtname")',
+    'textarea_Info_txtinfo': 'xpath=id("txtinfo")',
+    'textarea_Wiki_txtwiki': 'xpath=id("txtwiki")'
+}
 
 const Menu = {
     'menuActors': 'xpath=id("mnuactors")',
@@ -332,6 +363,31 @@ const Menu = {
     'menuTitle': 'xpath=id("mnuchecklists")',
     'menuWorkstock': 'xpath=//*[@id = "mnuworkstock"]'
 }
+
+const Request = {
+    'a_starFeedback vragen': 'xpath=id("homefeedbackrequest")',
+    'button_kopieer link': 'xpath=id("btncopylink")',
+    'button_kopieren': 'xpath=id("btncopy")',
+    'button_Maak verzoek': 'xpath=id("btnmakerequest")',
+    'button_Verzend verzoek': 'xpath=id("btnsend")',
+    'div_Djurve': 'xpath=id("djurve")',
+    'div_Share': 'xpath=id("share")',
+    'div_Vraag teamleden_mdl-card__title': 'xpath=id("feedback")',
+    'div_Wil je je team vragen om de happymeter te gebruiken of een co-team vragen om feedback_mdl-card__title': 'xpath=id("happymeter")',
+    'Select Actor': 'xpath=id("selectActor")',
+    'span_- Boris Boss_mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center': 'xpath=id("partners")/li[@class="mdl-list__item"]/span[@class="mdl-list__item-secondary-action editmode"]/label[@class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded"]/span[@class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center"]',
+}
+
+const Security = {
+    'a_xxs link': 'xpath=id("41ca13be-83bc-0799-8bd1-454f215dd1a3")/div[@class="mdl-card__supporting-text compact"]/a[1]',
+    'button_Opslaan': 'xpath=id("btnsave")',
+    'div_Mijn teams en players': 'xpath=id("homemyactors")/div[@class="mdl-card__title"]',
+    'info': 'xpath=id("txtinfo")',
+    'span_edit_mdl-button__ripple-container': 'xpath=id("btnedit")/span[@class="mdl-button__ripple-container"]',
+    'span_Tweetie Birds (TWE)': 'xpath=id("41ca13be-83bc-0799-8bd1-454f215dd1a3")/div[@class="mdl-list__item-primary-content"]/div[@class="mdl-list__item-text-header"]/span[1]',
+    'wiki': 'xpath=id("txtwiki")'
+}
+
 
 const Shortcuts = {
     'ShortcutAccount': 'xpath=id("btnaccount")',
@@ -367,9 +423,13 @@ module.exports = {
     Boards,
     Checklist,
     Dashboard,
+    Feedback,
     Groups,
     Happymeter,
+    Machines,
     Menu,
+    Request,
+    Security,
     Shortcuts,
     Signals,
 }

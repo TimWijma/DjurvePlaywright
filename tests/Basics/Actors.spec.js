@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
 const { Login } = require('../../login');
-const { Global, Defaults, Actors } = require('../../objects')
+const { Global, Defaults, Actors, Basics } = require('../../objects')
 
 test('Actors', async ({ page, browser }) => {
   const context = await browser.newContext()
@@ -18,6 +18,7 @@ test('Actors', async ({ page, browser }) => {
   await page.click(Actors.i_search)
   await page.fill(Actors.input_search, 'Tweetie')
   await page.keyboard.down('Enter');
+  await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
   await page.locator(Actors['span_Tweetie Birds']).click()
 
   // Add actor
@@ -29,6 +30,7 @@ test('Actors', async ({ page, browser }) => {
   await page.fill(Actors.textarea_txtinfo, "New info")
   await page.fill(Actors.textarea_txtgoals, "New goals")
   await page.click(Actors.button_Save)
+  await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
 
   // Edit actor
   expect(page.locator(Defaults.div_Toastr))
@@ -37,6 +39,7 @@ test('Actors', async ({ page, browser }) => {
   await page.click(Actors.ripple_container_edit)
   await page.fill(Actors.input_txtname, "New actor edit")
   await page.click(Actors.button_Save)
+  await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
 
   // Delete actor
   expect(page.locator(Defaults.div_Toastr))
