@@ -5,7 +5,6 @@ const { Global, Defaults, Checklist } = require('../../objects')
 test('Checklist', async ({ page, browser }) => {
   const context = await browser.newContext()
 
-  let chars = "ABCDEFGHIJKLMNOPQRSTUVWYZ0123456789"
   let code = (Math.random() + 1).toString(36).substring(2,7);
 
   page.goto(Global.url)

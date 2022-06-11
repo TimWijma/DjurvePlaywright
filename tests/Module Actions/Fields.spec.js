@@ -1,0 +1,57 @@
+const { test, expect } = require('@playwright/test');
+const { Login } = require('../../login');
+const { Global, Basics, Acties, Menu } = require('../../objects')
+
+test('Fields', async ({ page, browser }) => {
+//   page.on('dialog', dialog => dialog.accept());
+  const context = await browser.newContext()
+  await page.goto(Global.url)
+
+  await Login(page, "tjitske@djurve.nl")
+
+  await page.click(Acties.FieldTest.div_Klacht)
+  await page.fill(Acties.FieldTest.input_Titel_name, "Titel voor test")
+  await page.fill(Basics['Comment-Description'], "Beschrijving voor test")
+  await page.selectOption(Acties.selectReportingActor, "41ca13be-83bc-0526-8bd1-454f215dd1a3")
+  await page.fill(Basics['Date-Registration'], "14-02-1973")
+  await page.fill(Basics['Date-Deadline'], "14-02-2050")
+  await page.click(Acties.FieldTest['a_Gaan we door_light red_gray'])
+  await page.fill(Acties.FieldTest['input_Waarom wel of niet_text55ca13be-83bc-_1614b0'], "Reden voor test")
+  await page.selectOption(Acties.FieldTest['select_-- Company --13thFloorAgullas Mengen_117033'], "Department Development")
+  await page.click(Acties.FieldTest['a_Ben je daar blij mee_smiley verysad_gray'])
+  await page.fill(Acties.FieldTest['input_Wat is er geheim aan deze afdeling_te_cdaa23'], "Secret explanation voor test")
+  await page.selectOption(Acties.FieldTest['select_Vrolijk                    Weglachen_82a43c'], "Vrolijk")
+  await page.fill(Acties.FieldTest['input_Wanneer heb je dat losgelaten'], '14-02-2021')
+  await page.fill(Acties.FieldTest['textarea_Kun je daar meer over vertellen_te_f9f6f4'], "Uitgebreide toelichting voor test")
+  await page.fill(Acties.FieldTest.input_NumberAmount, "1.5678")
+  await page.fill(Acties.FieldTest['input_Wat was exact de laatste keer_date'], "31-12-2021")
+  // await page.click('#datebutton55ca13be-83bc-0085-8bd1-454f215dd1a3')
+  // await page.click('.mddtp-picker__cell--today')
+  // await page.click('#mddtp-date__ok')
+  await page.fill(Acties.FieldTest['input_Wat was exact de laatste keer_time'], "23:59")
+  await page.click(Acties.FieldTest.button_Opslaan)
+  await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
+  await page.click(Acties.buttonBack)
+  await page.click(Menu.menuWorkstock)
+  await page.click(Acties.Acties.li_first_action)
+  await expect(page.locator(Acties.RegistrationTitle)).toHaveText("Titel voor test")
+  await expect(page.locator(Acties.FieldTest['td_Beschrijving voor test'])).toHaveText("Beschrijving voor test")
+  await expect(page.locator('text=Complaints')).toBeVisible()
+  await expect(page.locator(Acties.FieldTest['td_Jade Tigers'])).toHaveText("Jade Tigers")
+  await expect(page.locator(Acties.FieldTest['td_Tjitske Tester'])).toHaveText("Tjitske Tester")
+  await page.click(Acties.FieldTest['tab Extra informatie'])
+  await expect(page.locator('text=1973-02-14')).toBeVisible()
+  await expect(page.locator('text=2050-02-14')).toBeVisible()
+  await expect(page.locator(".CSS0088 .ratingentry-readonly")).toHaveText('Department Development')
+  await expect(page.locator('text=Reden voor test')).toBeVisible()
+  await expect(page.locator('text=Secret explanation voor test')).toBeVisible()
+  await expect(page.locator('text=Vrolijk')).toBeVisible()
+  await expect(page.locator('text=14-02-2021')).toBeVisible()
+  await expect(page.locator('text=1.5678')).toBeVisible()
+  await expect(page.locator('text=Uitgebreide toelichting voor test')).toBeVisible()
+  await expect(page.locator('text=31-12-2021 23:59')).toBeVisible()
+  await page.click(Acties.FieldTest.button_Terug)
+
+
+  await context.close()
+});

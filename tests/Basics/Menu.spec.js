@@ -1,8 +1,8 @@
 const { test, expect } = require('@playwright/test');
 const { Login } = require('../../login');
-const { Global, Defaults, Menu, Shortcuts, Basics, Acties } = require('../../objects')
+const { Global, Menu, Shortcuts, Basics, Acties } = require('../../objects')
 
-test('Groups', async ({ page, browser }) => {
+test('Menu', async ({ page, browser }) => {
   const context = await browser.newContext()
 
   page.goto(Global.url)

@@ -1,0 +1,95 @@
+const { test, expect } = require('@playwright/test');
+const { Login } = require('../../login');
+const { Global, Basics, Shortcuts } = require('../../objects')
+
+test('Deeplinks', async ({ page, browser }) => {
+  const context = await browser.newContext()
+
+  page.goto(Global.url + '&deeplink=actor&companyid=41CA13BE-83BC-4444-8BD1-454F215DD1A4&actorid=41ca13be-83bc-0018-8bd1-454f215dd1a3')
+  await Login(page, "tjitske@djurve.nl")
+  await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
+  await expect(page.locator(Basics.detail_title)).toHaveText(/Angels/)
+  await page.click(Shortcuts.ShortcutAccount)
+  await page.click(Basics.li_Signout)
+
+  page.goto(Global.url + '&deeplink=actor&companyid=41CA13BE-83BC-4444-8BD1-454F215DD1A4&actorid=41ca13be-83bc-0018-8bd1-454f215dd1a3')
+  await Login(page, "tjitske@djurve.nl")
+  await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
+  await expect(page.locator("[data-i18n='actors.feedbackgraph']")).toHaveText(/Feedback/)
+  await expect(page.locator(Basics.detail_title)).toHaveText(/Angels/)
+  await page.click(Shortcuts.ShortcutAccount)
+  await page.click(Basics.li_Signout)
+
+  page.goto(Global.url + '&deeplink=feedback&companyid=41CA13BE-83BC-4444-8BD1-454F215DD1A4')
+  await Login(page, "tjitske@djurve.nl")
+  await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
+  await expect(page.locator(Basics.list_title)).toHaveText(/Complimeter/)
+  await page.click(Shortcuts.ShortcutAccount)
+  await page.click(Basics.li_Signout)
+
+  page.goto(Global.url + '&deeplink=feedback&companyid=41CA13BE-83BC-4444-8BD1-454F215DD1A4&actorid=41ca13be-83bc-0018-8bd1-454f215dd1a3')
+  await Login(page, "boris@djurve.nl")
+  await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
+  await expect(page.locator(Basics.list_title)).toHaveText(/Complimeter/)
+  await page.click(Shortcuts.ShortcutAccount)
+  await page.click(Basics.li_Signout)
+
+  page.goto(Global.url + '&deeplink=happymeter&companyid=41CA13BE-83BC-4444-8BD1-454F215DD1A4&actorid=41ca13be-83bc-0018-8bd1-454f215dd1a3')
+  await Login(page, "boris@djurve.nl")
+  await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
+  await expect(page.locator(Basics.list_title)).toHaveText(/Happymeter/)
+  await page.click(Shortcuts.ShortcutAccount)
+  await page.click(Basics.li_Signout)
+
+  page.goto(Global.url + '&deeplink=settings&companyid=41CA13BE-83BC-4444-8BD1-454F215DD1A4')
+  await Login(page, "boris@djurve.nl")
+  await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
+  await expect(page.locator("text=Company settings")).toBeVisible()
+  await page.click(Shortcuts.ShortcutAccount)
+  await page.click(Basics.li_Signout)
+
+  page.goto(Global.url + '&deeplink=company')
+  await Login(page, "boris@djurve.nl")
+  await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
+  await expect(page.locator(Basics.list_title)).toHaveText("Join companies")
+  await page.click(Shortcuts.ShortcutAccount)
+  await page.click(Basics.li_Signout)
+
+  page.goto(Global.url + '&deeplink=company&companyid=41CA13BE-83BC-4444-8BD1-454F215DD1A4')
+  await Login(page, "boris@djurve.nl")
+  await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
+  await expect(page.locator("text=Join companies")).toBeVisible()
+  await expect(page.locator(Basics.detail_title)).toHaveText("Demo")
+  await page.click(Shortcuts.ShortcutAccount)
+  await page.click(Basics.li_Signout)
+
+  page.goto(Global.url + '&deeplink=action')
+  await Login(page, "boris@djurve.nl")
+  await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
+  await expect(page.locator(Basics.list_title)).toHaveText("Actions")
+  await page.click(Shortcuts.ShortcutAccount)
+  await page.click(Basics.li_Signout)
+
+  page.goto(Global.url + '&deeplink=action&actionid=888a13be-83bc-0002-8bd1-454f215dd1a3')
+  await Login(page, "boris@djurve.nl")
+  await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
+  await expect(page.locator('//table//h2[@class = "mdl-card__title-text"]')).toHaveText(/Intervention 2/)
+  await page.click(Shortcuts.ShortcutAccount)
+  await page.click(Basics.li_Signout)
+
+  page.goto(Global.url + '&deeplink=registration')
+  await Login(page, "boris@djurve.nl")
+  await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
+  await expect(page.locator(Basics.list_title)).toHaveText("Registrations")
+  await page.click(Shortcuts.ShortcutAccount)
+  await page.click(Basics.li_Signout)
+
+  page.goto(Global.url + '&deeplink=registration&registrationid=888a13be-83bc-0002-8bd1-454f215dd1a3')
+  await Login(page, "boris@djurve.nl")
+  await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
+  await expect(page.locator('//table//h2[@class = "mdl-card__title-text"]')).toHaveText(/Intervention 2/)
+  await page.click(Shortcuts.ShortcutAccount)
+  await page.click(Basics.li_Signout)
+
+  await context.close()
+});
