@@ -22,7 +22,7 @@ test('New Critical Shift', async ({ page, browser }) => {
   await page.click(Acties.Acties.li_first_action)
   await page.click(Acties.buttonStartAction)
   await page.fill(Basics['Message-Description'], "Kun je deze oppakken?")
-  await page.selectOption(Acties.selectActionActor, "41ca13be-83bc-0033-8bd1-454f215dd1a3")
+  await page.selectOption(Acties.selectActionActor, "41ca13be-83bc-0966-8bd1-454f215dd1a3")
   await page.click(Acties.buttonStartActionFromTask)
   await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
   

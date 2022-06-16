@@ -15,7 +15,16 @@ const Defaults = {
 const Acties = {
     Acties: {
         'li_first_action': 'xpath=//*[@class = "registration actions-row testfirst"]',
-    },    
+    },
+    ActionFields: {
+        'actionActionHandler': 'xpath=id("currentactionowner")',
+        'actionActionOwner': 'xpath=id("currentactionactor")',
+        'actionName': 'xpath=id("registrationname")',
+        'actionOwner': 'xpath=id("registrationinitiatingactor")',
+        'actionReporter': 'xpath=id("registrationinitiatinguser")',
+        'actionStatus': 'xpath=id("status")',
+        'actionType': 'xpath=id("registrationtype")'
+    },      
     ActionFlow: {
         'a_Ben je daar blij mee_smiley veryhappy_gray veryhappy': 'xpath=//div[@id="55ca13be-83bc-0083-8bd1-454f215dd1a3"]/div/a[5]',
         'a_listRegistraties': 'xpath=id("mnuworkstock")',
@@ -413,6 +422,20 @@ const Signals = {
     'span_more_vert_mdl-button__ripple-container': 'xpath=id("mnusignala261f0a6-44d9-4f97-bcd8-397ca60614de")/span[@class="mdl-button__ripple-container"]',
 }
 
+const Smartphone = {
+    'span_Aankondiging': 'xpath=id("title")',
+    'span_Feedback vragen': 'xpath=id("title")',
+    'span_Feedback': 'xpath=id("title")',
+    'span_Happymeter': 'xpath=id("title")',
+    'span_Interventie': 'xpath=id("title")',
+    'span_interventiontasktitle': 'xpath=id("title")',
+    'span_Klacht': 'xpath=id("title")',
+    'span_Kwaliteit': 'xpath=id("title")',
+    'span_Storing': 'xpath=id("title")',
+    'span_Veiligheid': 'xpath=id("title")'
+}
+
+
 module.exports = {
     Global, 
     Defaults, 
@@ -432,4 +455,5 @@ module.exports = {
     Security,
     Shortcuts,
     Signals,
+    Smartphone
 }

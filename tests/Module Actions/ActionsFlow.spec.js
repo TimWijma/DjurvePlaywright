@@ -62,7 +62,7 @@ test('ActionsFlow', async ({ page, browser }) => {
   await expect(page.locator(Acties.ActionFlow.td_Status)).toHaveText("Niet opgelost")
   await page.click(Acties.ActionFlow.button_Doorsturen)
   await page.fill(Basics['Message-Description'], "Blijkt bij jullie te horen te liggen. Kunnen jullie deze oppakken?")
-  await page.selectOption(Acties.selectActionActor, "41ca13be-83bc-0799-8bd1-454f215dd1a3")
+  await page.selectOption(Acties.selectActionActor, "41ca13be-83bc-0966-8bd1-454f215dd1a3")
   await page.selectOption(Acties.selectActionUser, "51da13be-83bc-494a-8bd1-454f215dd1a9")
   await page.click(Acties.buttonStartActionFromTask)
   await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})

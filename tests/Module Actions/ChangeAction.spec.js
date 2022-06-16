@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
-const { Login } = require('../login');
-const { Global, Basics, Acties, Dashboard, Defaults, Menu } = require('../objects')
+const { Login } = require('../../login');
+const { Global, Basics, Acties, Dashboard, Menu } = require('../../objects')
 
 test('ChangeAction', async ({ page, browser }) => {
   page.on('dialog', dialog => dialog.accept());
@@ -27,7 +27,7 @@ test('ChangeAction', async ({ page, browser }) => {
   await page.click(Acties.Acties.li_first_action)
   await page.click(Acties.buttonStartAction)
   await page.fill(Basics['Message-Description'], "Kun je deze oppakken?")
-  await page.selectOption(Acties.selectActionActor, "41ca13be-83bc-0018-8bd1-454f215dd1a3")
+  await page.selectOption(Acties.selectActionActor, "41ca13be-83bc-0526-8bd1-454f215dd1a3")
   await page.selectOption(Acties.selectActionUser, "51da13be-83bc-494a-8bd1-454f215dd1a8")
   await page.click(Acties.buttonStartActionFromTask)
   await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
@@ -37,18 +37,28 @@ test('ChangeAction', async ({ page, browser }) => {
   await Login(page, 'hendrik@djurve.nl')
 
   await page.click(Acties.ChangeActionAndVerySave.div_assignment)
+  await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
   await page.waitForTimeout(1000)
 
-  // await page.selectOption(Acties.selectFilterActies, "4")
+  await page.selectOption(Acties.selectFilterActies, "4")
   await page.click(Acties.Acties.li_first_action)
+  await page.waitForLoadState("networkidle")
   await page.click(Acties.ChangeActionAndVerySave['button_Voor mij'])
   await page.click(Acties.ChangeActionAndVerySave.button_Edit)
+  await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
+  await page.waitForLoadState("networkidle")
   await page.fill(Basics['Comment-Description'], "De koffie voelt als slootwater. Aan het eind van de dag heb ik wel wat beters nodig. Ik heb al medelijden met de mensen die in de nacht werken. Ik ben het er wel mee eens.")
   await page.click(Acties.ChangeActionAndVerySave.button_Save)
   await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
   await page.click(Acties.ChangeActionAndVerySave.div_assignment)
   await page.click(Acties.Acties.li_first_action)
-
+  await expect(page.locator(Acties.ActionFields.actionName)).toHaveText("De koffie valt wat tegen")
+  await expect(page.locator(Acties.ActionFields.actionType)).toHaveText("Complaint")
+  await expect(page.locator(Acties.ActionFields.actionStatus)).toHaveText("Gestart")
+  await expect(page.locator(Acties.ActionFields.actionOwner)).toHaveText("Tweetie Birds")
+  await expect(page.locator(Acties.ActionFields.actionReporter)).toHaveText("Leo Laser")
+  await expect(page.locator(Acties.ActionFields.actionActionOwner)).toHaveText("Jade Tigers")
+  await expect(page.locator(Acties.ActionFields.actionActionHandler)).toHaveText("Brave Hendrik")
 
 
   await context.close()

@@ -6,7 +6,7 @@ const config = {
   workers: 1,
   timeout: 20000,
   use: {
-    video: 'on-first-retry',
+    video: 'on',
     trace: 'on',
     ignoreHTTPSErrors: true,
   },

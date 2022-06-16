@@ -31,6 +31,7 @@ test('Fields', async ({ page, browser }) => {
   await page.click(Menu.menuWorkstock)
   await page.click(Acties.Acties.li_first_action)
   await page.locator(Basics.ProgressBar).first().waitFor({state: 'hidden'})
+  await page.waitForLoadState("networkidle")
   await expect(page.locator('//*[@id="namecontainer"]//*[@id="registrationname"]')).toBeVisible()
   await expect(page.locator(Acties.RegistrationTitle)).toHaveText("Titel voor test")
   await expect(page.locator(Acties.FieldTest['td_Beschrijving voor test'])).toHaveText("Beschrijving voor test")
